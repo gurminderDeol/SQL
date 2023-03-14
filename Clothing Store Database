@@ -1,0 +1,23 @@
+--Store table GKstore
+
+create Table GKstore(item_id INTEGER PRIMARY KEY, name TEXT,size TEXT,material TEXT,price Integer);
+
+INSERT INTO GKstore VALUES(1,"shirt","M","cotton",25);
+INSERT INTO GKstore VALUES(2,"Skirt","S","Denim",35.50);
+INSERT INTO GKstore VALUES(3,"Maxi Skirt","S","Denim",55);
+INSERT INTO GKstore VALUES(4,"dress","L","Denim",55.50);
+INSERT INTO GKstore VALUES(5,"scarf","one size","Silk",55.50);
+INSERT INTO GKstore VALUES(6,"gloves","One Size","wool",10.99);
+INSERT INTO GKstore VALUES(7,"leggings","XL","polyester",20.99);
+INSERT INTO GKstore VALUES(8,"blouse","M","flannel",35.50);
+INSERT INTO GKstore VALUES(9,"cardigan","XXL","wool",55);
+INSERT INTO GKstore VALUES(10,"t_shirt","M","cotton",15.99);
+
+--display average price of the clothes in the store
+select AVG(price) from GKstore;
+
+--display the database order by price
+select * from GKstore ORDER BY price;
+
+--display the database with item having size M and order by price
+select * from GKstore WHERE Size="M" ORDER BY price;
