@@ -1,0 +1,40 @@
+# Here, I am quering Spotify"s Top 50 Songs
+
+/*What is the average danceability by artist and track? */
+SELECT artist_name,
+       AVG(danceability) AS Dancebility
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+ORDER BY dancebility DESC;
+
+
+/*Who are the top 10 artists based on popularity, and what are their tracks' average danceability and energy?
+*/
+
+SELECT artist_name,
+       AVG(popularity),
+       AVG(danceability),
+       AVG(energy)
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+ORDER BY popularity desc
+LIMIT 10;
+
+/*--What artist released the longest song?*/
+
+SELECT artist_name,
+       track_name,
+       duration_ms
+FROM BIT_DB.Spotifydata
+ORDER BY duration_ms DESC
+LIMIT 1;
+
+/*What is the average danceability of the top 10 most popular songs?*/
+
+
+SELECT  
+AVG(danceability) AS average_danceability
+FROM BIT_DB.Spotifydata
+WHERE popularity >= 95;
+
+
